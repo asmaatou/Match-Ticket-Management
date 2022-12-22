@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Ticket {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
+    @Column(unique = true,length = 16)
     private String reference;
     private double price;
     private Status status;

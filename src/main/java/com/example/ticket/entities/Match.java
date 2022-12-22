@@ -21,6 +21,7 @@ public class Match {
     private String firstTeam;
     private String secondTeam;
     @OneToMany(mappedBy = "match")
+    @Column(length = 2022)
     private List<Ticket> tickets;
 
 }
