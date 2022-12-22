@@ -9,11 +9,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Ticket {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id
+    private Integer id;
     @Column(unique = true,length = 16)
     private String reference;
     private double price;
+    @Enumerated(EnumType.STRING)
     private Status status;
     @ManyToOne
     private Match match;
