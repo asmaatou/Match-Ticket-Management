@@ -5,13 +5,21 @@ import com.example.ticket.dtos.response.TicketDTOResponse;
 import com.example.ticket.entities.Match;
 import com.example.ticket.entities.Ticket;
 import com.example.ticket.enums.Status;
+import com.example.ticket.mappers.dtoMapper;
 import com.example.ticket.repos.MatchRepository;
+import com.example.ticket.repos.TicketRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Random;
 import java.util.UUID;
 
 public class TicketServiceImpl implements TicketService{
+    @Autowired
     private MatchRepository matchRepository;
+    @Autowired
+    private dtoMapper dtoMapper;
+    @Autowired
+    private TicketRepository ticketRepository;
     @Override
     public TicketDTOResponse buyTicket(TicketDTORequest ticketDTORequest) {
         Match match = matchRepository.findById(ticketDTORequest.getMatchId()).get();
@@ -22,11 +30,13 @@ public class TicketServiceImpl implements TicketService{
         ticket.setStatus(Status.ENABLED);
         ticket.setMatch(match);
         matchRepository.save(match);
-        return null;
+        return dtoMapper.fromTicket(ticketRepository.save(ticket));
     }
 
     @Override
-    public void updateStatus(Long ticketId) {
-
+    public void updateStatus(Integer ticketId) {
+        Ticket ticket = ticketRepository.findById(ticketId).get();
+        ticket.setStatus(Status.DISABLED);
+        ticketRepository.save(ticket);
     }
 }

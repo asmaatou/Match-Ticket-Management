@@ -18,9 +18,9 @@ public class dtoMapper {
         return matchDTOResponse;
     }
 
-    public Ticket fromTicket(TicketDTORequest ticketDTORequest){
-        Ticket ticket = new Ticket();
-        BeanUtils.copyProperties(ticketDTORequest,ticket);
-        return ticket;
+    public TicketDTOResponse fromTicket(Ticket ticket){
+        TicketDTOResponse ticketDTOResponse=new TicketDTOResponse();
+        BeanUtils.copyProperties(ticket,ticketDTOResponse);
+        return ticketDTOResponse;
     }
 }

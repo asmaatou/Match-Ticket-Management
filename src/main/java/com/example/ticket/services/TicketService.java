@@ -6,5 +6,5 @@ import com.example.ticket.entities.Ticket;
 
 public interface TicketService {
     TicketDTOResponse buyTicket(TicketDTORequest ticketDTORequest);
-    void updateStatus(Long ticketId);
+    void updateStatus(Integer ticketId);
 }
