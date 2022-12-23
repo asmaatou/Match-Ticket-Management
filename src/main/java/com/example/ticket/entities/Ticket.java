@@ -1,10 +1,12 @@
 package com.example.ticket.entities;
 
 import com.example.ticket.enums.Status;
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor

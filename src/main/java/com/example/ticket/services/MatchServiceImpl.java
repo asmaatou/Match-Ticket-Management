@@ -5,11 +5,12 @@ import com.example.ticket.dtos.response.MatchDTOResponse;
 import com.example.ticket.entities.Match;
 import com.example.ticket.mappers.dtoMapper;
 import com.example.ticket.repos.MatchRepository;
-import jakarta.transaction.Transactional;
+
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;

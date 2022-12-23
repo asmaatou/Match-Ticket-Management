@@ -1,17 +1,19 @@
 package com.example.ticket.entities;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Match {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(unique = true)
     private String reference;
