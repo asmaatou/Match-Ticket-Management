@@ -9,6 +9,5 @@ import lombok.NoArgsConstructor;
 public class TicketDTORequest {
     private String reference;
     private double price;
-    private Status status;
     private Integer matchId;
 }
