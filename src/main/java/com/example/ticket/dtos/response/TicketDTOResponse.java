@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Data @AllArgsConstructor @NoArgsConstructor
 public class TicketDTOResponse {
+    private Integer id;
     private String reference;
     private double price;
     private Status status;
