@@ -28,14 +28,13 @@ public class MatchTicketApplication {
         return args -> {
             MatchRequestDto matchRequestDto = new MatchRequestDto(new Date(),"Place 1","Team A","Team B");
             matchService.addMatch(matchRequestDto);
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 2022; i++) {
                 TicketRequestDto ticketRequestDto = new TicketRequestDto((float) (Math.random()*100));
                 ticketService.addTicket(1L,ticketRequestDto);
             }
 
         };
     }
-
 
 
 }

@@ -17,16 +17,16 @@ type Ticket{
     match:Match
 }
 
-
-
-
-
 input  MatchRequestDto{
     date:String,
     lieu:String,
     equipe1:String,
     equipe2:String,
 
+}
+
+input  TicketRequestDto{
+    prix:Float
 }
 
 type MatchResponseDto{
@@ -38,7 +38,12 @@ type MatchResponseDto{
     equipe2:String,
     ticketList:[Ticket]
 }
-
+type TicketResponseDto{
+    id:ID,
+    reference:String,
+    prix:Float,
+    status:String
+}
 
 type Query{
     getMatchs:[MatchResponseDto],
@@ -56,6 +61,9 @@ type Mutation{
 
 
     deleteTicket(id:ID):String
+
+    addTicket(t:TicketRequestDto):TicketResponseDto,
+    updateTicket(id:ID,t:TicketRequestDto):TicketResponseDto,
 
 
 
